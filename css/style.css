@@ -1,0 +1,158 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../images/board.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: whitesmoke;
+    font-family: serif; 
+    margin: 0 auto;
+   
+}
+
+main{
+    flex: 1;
+}
+
+footer{
+    text-align: center;
+    font-size: 18px;
+}
+
+footer a{
+    text-decoration: none;
+    color: #f2f2f2;
+}
+
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#wrapper{
+    text-align: center;
+    
+}
+
+#answer{
+    padding: 4px;
+    font-size: 20px;
+    outline: none;
+    width: 220px;
+    border-radius: 6px;
+}
+
+.btn{
+    background-color: #333;
+    color: whitesmoke;
+    padding: 4px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    margin: 8px;
+    margin-right: 6px;
+    border-radius: 4px;
+    font-style: normal;
+    text-shadow: #080;
+}
+
+.radar{
+    margin: 10px;
+    border: 1px solid whitesmoke;
+    border-right: none;
+    position: relative;
+}
+
+.radar-inner{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #008000;
+    opacity: .5;
+    transform: scaleX(0);
+    transform-origin: center left;
+    transition: transform .3s ease-in;
+}
+
+.boxes{
+    display: flex;
+    width: 100%;
+}
+
+.box{
+    height: 40px;
+    border-right: 1px solid whitesmoke;
+    flex:1;
+}
+
+.overlay{
+    text-align: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(red, green, blue, .8);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease-in;
+    transform: scale(1.1)
+}
+
+body.overlay-open .overlay,
+.overlay--visible {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+body.overlay-open .container-wrapper {
+  filter: blur(4px);
+}
+
+@keyframes wrongError{
+    50% {
+        color: red;
+        transform: scale(1.2)
+    }
+    100% {
+        color: #000;
+        transform: scale(1)
+    }
+}
+
+@keyframes rightError{
+    50% {
+        color: green;
+        transform: scale(1.2)
+    }
+    100% {
+        color: #000;
+        transform: scale(1)
+    }
+}
+
+.animate-wrong{
+    animation: .4s wrongError;
+}
+
+
+.animate-right{
+    animation: .4s rightError;
+}
