@@ -1,5 +1,5 @@
 # minimathquiz
-simple math questions about the four operators + - x /
+simple math questions operators + - x /
 
-### Preveiw 
+### Demo 
 http://miniquiz.netlify.app
